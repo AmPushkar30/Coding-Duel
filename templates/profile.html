@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile | Coding Duel</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+
+<body>
+    <div id="page-loader">
+  <div class="loader-core">
+    <span>C</span><span>O</span><span>D</span><span>I</span><span>N</span><span>G</span>
+    <span>D</span><span>U</span><span>E</span><span>L</span>
+  </div>
+  </div>
+<div class="profile-container">
+    <a href="/index" class="back-btn">← Back</a>
+
+
+  <div class="profile-card">
+    <div class="avatar">👤</div>
+
+    <h2>{{ user.name }}</h2>
+    <p class="email">{{ user.email }}</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <span class="stat-number">{{ stats.matches }}</span>
+      <span class="stat-label">Matches</span>
+    </div>
+
+    <div class="stat-box win">
+      <span class="stat-number">{{ stats.wins }}</span>
+      <span class="stat-label">Wins</span>
+    </div>
+
+    <div class="stat-box loss">
+      <span class="stat-number">{{ stats.losses }}</span>
+      <span class="stat-label">Losses</span>
+    </div>
+
+    <div class="stat-box draw">
+      <span class="stat-number">{{ stats.draws }}</span>
+      <span class="stat-label">Draws</span>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+</body>
+</html>

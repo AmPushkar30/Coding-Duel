@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Details</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+
+</head>
+<body>
+  <div id="page-loader">
+  <div class="loader-core">
+    <span>C</span><span>O</span><span>D</span><span>I</span><span>N</span><span>G</span>
+    <span>D</span><span>U</span><span>E</span><span>L</span>
+  </div>
+  </div>
+<div class="history-container">
+  <a href="/history" class="back-btn">← Back</a>
+
+  <h2>Match Details</h2>
+
+  <div class="match-card {{ match.result|lower }}">
+    <div class="top">
+      <span>{{ match.date.strftime('%d %b %Y • %I:%M %p') }}</span>
+      <span>{{ match.result }}</span>
+    </div>
+
+    <div class="meta">
+      <span>Opponent: {{ match.opponent }}</span>
+      <span>Language: {{ match.language }}</span>
+      <span>Points: {{ match.points }}</span>
+    </div>
+
+    <h4>Attempted Questions</h4>
+    <ul class="questions">
+      {% for q in match.questions %}
+        <li>{{ q }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

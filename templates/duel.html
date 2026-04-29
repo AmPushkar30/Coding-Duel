@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coding Duel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/duel.css') }}">
+  
+</head>
+<body>
+  <div class="top-bar">
+    <div class="player-box" id="player1">
+      Player 1: <span id="p1_name">{{ player1_name }}</span>
+      <div class="points" id="p1_points">{{ player1_points }}</div>
+    </div>
+    
+    <div class="timer" id="timer">60</div>
+    
+    <div class="player-box" id="player2">
+      <div class="points" id="p2_points">{{ player2_points }}</div>
+      Player 2: <span id="p2_name">{{ player2_name }}</span>
+    </div>
+  </div>
+  
+  <div id="question-text">{{ question }}</div>
+  
+  <div id="editor"># Write your code here...</div>
+  
+  <div class="buttons">
+    <button id="submitBtn">Submit Code</button>
+    <button id="clearBtn">Clear Code</button>
+  </div>
+  <script>
+  const ROOM_ID = "{{ room_id }}";
+  const PLAYER_NAME = "{{ current_player }}";
+</script>
+
+  <script src="{{ url_for('static', filename='js/duel.js') }}"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+ 
+  <!-- Result Modal -->
+<div id="resultModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="modalMessage">Result Message</h2>
+    <button id="modalOkBtn">OK</button>
+  </div>
+</div>
+
+<!-- Final Match Modal -->
+<div id="finalModal" class="modal hidden">
+  <div class="modal-content">
+    <h2 id="finalMessage">Match Finished!</h2>
+    <button id="goHomeBtn">Go to Home</button>
+  </div>
+</div>
+
+</body>
+</html>

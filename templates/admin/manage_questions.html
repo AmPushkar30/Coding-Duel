@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Questions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/manage_questions.css') }}">
+</head>
+<body>
+
+<a href="/admin/dashboard" class="back-btn">← Back</a>
+
+<h1 class="title">Manage Questions</h1>
+
+<div class="form-box">
+  <form action="/admin/add_question" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="text" name="language" placeholder="Language (python/cpp/java)" required>
+    <textarea name="description" placeholder="Description" required></textarea>
+    <textarea name="stdin" placeholder="Test Input (optional)"></textarea>
+    <textarea name="expected_output" placeholder="Expected Output" required></textarea>
+    <button type="submit">➕ Add Question</button>
+  </form>
+</div>
+
+<div class="list-box">
+  {% for q in questions %}
+    <div class="q-card">
+      <h3>{{ q.title }} <span>({{ q.language }})</span></h3>
+      <p>{{ q.description }}</p>
+
+      <a class="del-btn" href="/admin/delete_question/{{ q._id }}">Delete</a>
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

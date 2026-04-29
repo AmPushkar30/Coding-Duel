@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Notes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/notes.css') }}">
+</head>
+<body>
+
+<a href="/index" class="back-btn">← Back</a>
+
+<h1>📚 Study Notes</h1>
+
+<div class="notes-grid">
+  {% for n in notes %}
+    <a href="/notes/{{ n._id }}" class="note-card">
+      <h3>{{ n.title }}</h3>
+      <p>{{ n.subject }}</p>
+      <span class="badge">{{ n.level }}</span>
+    </a>
+  {% else %}
+    <p>No notes available.</p>
+  {% endfor %}
+</div>
+
+</body>
+</html>

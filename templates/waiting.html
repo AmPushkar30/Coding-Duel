@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matchmaking - Coding Duel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/waiting.css') }}">
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  
+  <a href="/index" class="back-btn">← Back</a>
+  <div class="container">
+    <h2 id="statusText">Select your language to start matchmaking</h2>
+    
+    <div class="language-select" id="languageSelect">
+      <label for="language">Language:</label>
+      <select id="language" required>
+        <option value="python">Python</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+      <button id="findBtn">Find Opponent</button>
+    </div>
+    
+    <div class="loader" id="loader" style="display:none;"></div>
+    
+    <button id="cancelBtn" style="display:none;" class="cancel-btn">Cancel Matchmaking</button>
+  </div>
+  
+  <div class="player-info" style="display:none">
+    <span id="playerName">{{ name }}</span>
+    <span id="playerEmail">{{ email }}</span>
+  </div>
+  
+  <script src="{{ url_for('static', filename='js/waiting.js') }}"></script>
+  <div class="match-overlay" id="matchOverlay">
+    <div class="match-message" id="matchMessage">🎯 Opponent found!</div>
+  </div>
+  
+</body>
+</html>

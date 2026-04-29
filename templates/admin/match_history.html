@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/match_history.css') }}">
+</head>
+<body>
+
+<a href="/admin/dashboard" class="back-btn">← Back</a>
+
+<h1 class="title">All Match History</h1>
+
+<div class="container">
+  {% for m in matches %}
+    <div class="match-card">
+      <h3>{{ m.player1.name }} vs {{ m.player2.name }}</h3>
+      <p>Status: <b>{{ m.status }}</b></p>
+      <p>Winner: <b>{{ m.winner if m.winner else "Not finished" }}</b></p>
+      <p>Language: <b>{{ m.language }}</b></p>
+      <p>Date: <b>{{ m.created_at }}</b></p>
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

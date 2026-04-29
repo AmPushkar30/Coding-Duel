@@ -1,0 +1,25 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "a945d0b1-98f9-419d-83bf-035e214008a9",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1774462381046"
+        }
+      },
+      "favorite": {
+        "name": "TYIT_PROJECT",
+        "color": "color3"
+      },
+      "savedConnectionType": "recent",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      }
+    }
+  ]
+}

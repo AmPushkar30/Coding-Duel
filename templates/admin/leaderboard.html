@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_lead.css') }}">
+</head>
+<body>
+
+<a href="/admin/dashboard" class="back-btn">← Back</a>
+
+<h1 class="title">Leaderboard</h1>
+<p class="subtitle">{{ month }}</p>
+
+<div class="table-box">
+  <div class="row header">
+    <span>#</span>
+    <span>Player</span>
+    <span>Points</span>
+  </div>
+
+  {% for p in leaderboard %}
+  <div class="row">
+    <span>{{ p.rank }}</span>
+    <span>{{ p.name }}</span>
+    <span>{{ p.points }}</span>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

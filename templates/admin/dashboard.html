@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Coding Duel</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dash.css') }}">
+</head>
+
+<body>
+
+  <div class="admin-container">
+
+    <!-- Top Header -->
+    <div class="admin-header">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p class="subtitle">Monitor live duels & manage the platform</p>
+      </div>
+
+      <div class="header-actions">
+        <a href="/index" class="ghost-btn">← Back to Home</a>
+        <a href="/admin_logout" class="danger-btn">Logout</a>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+
+      <div class="stat-card glow-blue">
+        <p class="stat-title">Live Matches</p>
+        <h2 class="stat-value">{{ live_matches }}</h2>
+      </div>
+
+      <div class="stat-card glow-green">
+        <p class="stat-title">Total Users</p>
+        <h2 class="stat-value">{{ total_users }}</h2>
+      </div>
+
+      <div class="stat-card glow-yellow">
+        <p class="stat-title">Total Questions</p>
+        <h2 class="stat-value">{{ total_questions }}</h2>
+      </div>
+
+      <div class="stat-card glow-red">
+        <p class="stat-title">Total Matches</p>
+        <h2 class="stat-value">{{ total_matches }}</h2>
+      </div>
+
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <h2 class="section-title">Quick Actions</h2>
+
+      <div class="action-grid">
+
+        <a href="/admin/live_matches" class="action-card">
+          <h3>🔥 Live Match Monitor</h3>
+          <p>Watch matches in real-time and detect cheating.</p>
+        </a>
+
+        <a href="/admin/manage_questions" class="action-card">
+          <h3>📝 Manage Questions</h3>
+          <p>Add, view, and remove coding problems.</p>
+        </a>
+
+        <a href="/admin/leaderboard" class="action-card">
+          <h3>🏆 Leaderboard</h3>
+          <p>View player rankings for this month.</p>
+        </a>
+
+        <a href="/admin/match_history" class="action-card">
+          <h3>📜 Match History</h3>
+          <p>See overall match logs stored in database.</p>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

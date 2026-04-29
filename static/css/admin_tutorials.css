@@ -1,0 +1,43 @@
+body {
+  background: #0b1220;
+  color: white;
+  font-family: Arial;
+  padding: 30px;
+}
+
+.back-btn {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.form-box {
+  margin: 20px 0;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  padding: 8px 16px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+.card {
+  background: #16213e;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  color: red;
+  text-decoration: none;
+}

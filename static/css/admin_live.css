@@ -1,0 +1,53 @@
+body{
+  margin:0;
+  font-family: Consolas, monospace;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color:#e5e7eb;
+  padding:40px;
+}
+
+.back-btn{
+  display:inline-block;
+  padding:10px 18px;
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+}
+
+.title{
+  margin-top:25px;
+  font-size:34px;
+}
+
+.container{
+  margin-top:20px;
+  display:grid;
+  gap:18px;
+}
+
+.match-card{
+  padding:20px;
+  border-radius:16px;
+  background:#020617;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.match-card .top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.status{
+  background:#22c55e;
+  padding:6px 12px;
+  border-radius:12px;
+  color:#000;
+  font-weight:bold;
+}
+
+.empty{
+  font-size:18px;
+  opacity:0.8;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ note.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/note_detail.css') }}">
+</head>
+<body>
+
+<a href="/notes" class="back-btn">← Back</a>
+
+<h1>{{ note.title }}</h1>
+<p><b>Subject:</b> {{ note.subject }}</p>
+<p><b>Level:</b> {{ note.level }}</p>
+
+<div class="content">
+ {{ note.content | safe }}
+</div>
+
+</body>
+</html>

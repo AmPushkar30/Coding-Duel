@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  font-family: 'Consolas', monospace;
+  background-color: #0f172a; /* dark navy/black */
+  color: #e0e0e0; /* soft light gray for readability */
+}
+
+/* ---------- Page Loader ---------- */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-core {
+  display: flex;
+  gap: 6px;
+  font-family: "Bungee", monospace;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.loader-core span {
+  color: #38bdf8;
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+.loader-core span:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.loader-core span:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+
+
+
+header {
+  background-color: #1e293b; /* deeper dark blue */  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 35px;
+  font-family: "Bungee", sans-serif;
+   
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 110px 20px;
+  gap: 35px;
+}
+
+.main-button {
+   background-color: #072565; 
+  color: #fff;
+  padding: 30px 100px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.grid-buttons {
+  
+  display: flex;
+  gap: 20px;
+}
+
+.grid-button {
+   background-color: #072565; /* bright blue */
+  color: #fff;
+  padding: 30px;
+  width: 160px;
+  height: 160px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  cursor: pointer;
+}
+
+.learn-button {
+  background-color: #072565;
+  color: #fff;
+  border: none;
+  padding: 30px 100px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.grid-button .emoji {
+  font-size: 28px;
+}
+
+
+/*-------------Menu----------*/
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #1e293b;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.5);
+  padding: 30px 20px;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.hidden {
+  transform: translateX(100%);
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  margin-bottom: 25px;
+}
+
+.side-menu a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
+.close-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #e0e0e0;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.close-icon:hover {
+  color: #ff4d4d;
+}
+
+
+/* Common hover effect for main buttons */
+.main-button:hover,
+.grid-button:hover,
+.learn-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Smooth transition on normal state too */
+.main-button,
+.grid-button,
+.learn-button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Glitch effect for header text */
+header h1 {
+  position: relative;
+  color: #fff;
+  font-size: 35px;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+
+/* Layers for glitch colors */
+header h1::before,
+header h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  clip: rect(0, 0, 0, 0);
+}
+
+header h1::before {
+  left: 3px;
+  text-shadow: -3px 0 red;
+}
+
+header h1::after {
+  left: -3px;
+  text-shadow: 3px 0 cyan;
+}
+
+/* Keyframes for stronger distortion */
+@keyframes glitch {
+  0% {
+    clip: rect(20px, 9999px, 80px, 0);
+    transform: skew(1deg);
+  }
+  10% {
+    clip: rect(5px, 9999px, 60px, 0);
+    transform: skew(-2deg);
+  }
+  20% {
+    clip: rect(30px, 9999px, 120px, 0);
+    transform: skew(1.5deg);
+  }
+  30% {
+    clip: rect(15px, 9999px, 90px, 0);
+    transform: skew(-1deg);
+  }
+  40% {
+    clip: rect(50px, 9999px, 130px, 0);
+    transform: skew(2deg);
+  }
+  50%, 100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: skew(0deg);
+  }
+}
+
+/* Trigger animation */
+header h1.glitching::before,
+header h1.glitching::after {
+  animation: glitch 0.8s steps(2, end);
+}
+
+

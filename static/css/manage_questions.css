@@ -1,0 +1,218 @@
+/* ==============================
+   Manage Questions (Admin)
+   Theme: Coding Duel Dark Neon
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Consolas, monospace;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  padding: 40px 60px;
+}
+
+/* ---------- Back Button ---------- */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #e5e7eb;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(2, 6, 23, 0.55);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
+  transition: 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.22);
+}
+
+/* ---------- Title ---------- */
+.title {
+  margin-top: 22px;
+  font-size: 44px;
+  letter-spacing: 2px;
+  color: #f8fafc;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+/* ---------- Form Box ---------- */
+.form-box {
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+/* Form Layout */
+.form-box form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Textareas full width */
+.form-box textarea {
+  grid-column: span 2;
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Inputs + Textareas */
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e5e7eb;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* Focus Glow */
+.form-box input:focus,
+.form-box textarea:focus {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+/* Button */
+.form-box button {
+  grid-column: span 2;
+  cursor: pointer;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  box-shadow: 0 0 22px rgba(37, 99, 235, 0.25);
+  transition: 0.25s ease;
+}
+
+.form-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.45);
+}
+
+/* ---------- List Box ---------- */
+.list-box {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* Question Card */
+.q-card {
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.q-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.18);
+}
+
+/* Top Gradient Glow bar */
+.q-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 60%);
+  pointer-events: none;
+}
+
+/* Title + Language */
+.q-card h3 {
+  font-size: 18px;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.q-card h3 span {
+  font-size: 13px;
+  color: #93c5fd;
+  margin-left: 8px;
+}
+
+/* Description */
+.q-card p {
+  font-size: 14px;
+  color: rgba(226, 232, 240, 0.85);
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+/* Delete Button */
+.del-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.10);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+  transition: 0.25s ease;
+}
+
+.del-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(239, 68, 68, 0.18);
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.25);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  body {
+    padding: 30px 25px;
+  }
+
+  .list-box {
+    grid-template-columns: 1fr;
+  }
+
+  .form-box form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-box textarea,
+  .form-box button {
+    grid-column: span 1;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}

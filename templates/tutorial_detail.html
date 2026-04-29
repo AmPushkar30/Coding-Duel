@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ tutorial.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial_detail.css') }}">
+</head>
+<body>
+
+<a href="/tutorials" class="back-btn">← Back to Tutorials</a>
+
+<div class="container">
+
+  <h1>{{ tutorial.title }}</h1>
+
+  <div class="badges">
+    <span class="badge category">{{ tutorial.category }}</span>
+    <span class="badge difficulty">{{ tutorial.difficulty }}</span>
+  </div>
+
+  <div class="section">
+    <h2>📖 Explanation</h2>
+    <p class="explanation">
+      {{ tutorial.explanation }}
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>💻 Example Code</h2>
+    <pre><code>{{ tutorial.example_code }}</code></pre>
+  </div>
+
+  <div class="actions">
+    <a href="/start_duel" class="duel-btn">⚔ Practice in Duel</a>
+  </div>
+
+</div>
+
+</body>
+</html>

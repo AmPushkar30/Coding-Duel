@@ -1,0 +1,80 @@
+body {
+  background: #0b1220;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #aaa;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.filters {
+  margin-top: 15px;
+}
+
+select {
+  padding: 8px 12px;
+  margin-right: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #1b2a4f;
+}
+
+.badges {
+  margin: 10px 0;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.category {
+  background: #3b82f6;
+}
+
+.difficulty {
+  background: #10b981;
+}
+
+.preview {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.open-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}

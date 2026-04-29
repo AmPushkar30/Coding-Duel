@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+      <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+
+</head>
+<body>
+  <div id="page-loader">
+  <div class="loader-core">
+    <span>C</span><span>O</span><span>D</span><span>I</span><span>N</span><span>G</span>
+    <span>D</span><span>U</span><span>E</span><span>L</span>
+  </div>
+  </div>
+<div class="leaderboard-container">
+  <a href="/index" class="back-btn">← Back</a>
+
+  <h2>Leaderboard</h2>
+  <p class="subtitle">{{ month }}</p>
+<div class="leaderboard-wrapper">
+  <div class="leaderboard-table">
+      <div class="row header">
+          <span>#</span>
+      <span>Player</span>
+      <span>Points</span>
+    </div>
+    
+    {% for p in leaderboard %}
+    <div class="row">
+        <span>{{ p.rank }}</span>
+      <span>{{ p.name }}</span>
+      <span>{{ p.points }}</span>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+
+</body>
+</html>

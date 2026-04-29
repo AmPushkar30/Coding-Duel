@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Matches</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_live.css') }}">
+</head>
+<body>
+
+<a href="/admin/dashboard" class="back-btn">← Back</a>
+
+<h1 class="title">Live Matches</h1>
+
+<div class="container">
+  {% if matches|length == 0 %}
+    <p class="empty">No live matches right now ✅</p>
+  {% else %}
+    {% for m in matches %}
+      <div class="match-card">
+        <div class="top">
+          <h3>{{ m.player1.name }} vs {{ m.player2.name }}</h3>
+          <span class="status">LIVE</span>
+        </div>
+        <p>Language: <b>{{ m.language }}</b></p>
+        <p>Room ID: <b>{{ m._id }}</b></p>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+</body>
+</html>

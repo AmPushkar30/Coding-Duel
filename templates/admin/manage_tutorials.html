@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Tutorials</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_tutorials.css') }}">
+</head>
+<body>
+
+<a href="/admin/dashboard" class="back-btn">← Back</a>
+
+<h1>Manage Tutorials</h1>
+
+<div class="form-box">
+  <form action="/admin/add_tutorial" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="text" name="category" placeholder="Category" required>
+    <select name="difficulty" required>
+      <option value="Easy">Easy</option>
+      <option value="Medium">Medium</option>
+      <option value="Hard">Hard</option>
+    </select>
+    <textarea name="explanation" placeholder="Explanation" required></textarea>
+    <textarea name="example_code" placeholder="Example Code" required></textarea>
+    <button type="submit">Add Tutorial</button>
+  </form>
+</div>
+
+<div class="list-box">
+  {% for t in tutorials %}
+    <div class="card">
+      <h3>{{ t.title }}</h3>
+      <p>{{ t.category }} | {{ t.difficulty }}</p>
+      <a href="/admin/delete_tutorial/{{ t._id }}" class="delete-btn">Delete</a>
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

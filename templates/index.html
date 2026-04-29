@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coding Duel</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Share:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+
+</head>
+<body>
+   <div id="page-loader">
+  <div class="loader-core">
+    <span>C</span><span>O</span><span>D</span><span>I</span><span>N</span><span>G</span>
+    <span>D</span><span>U</span><span>E</span><span>L</span>
+  </div>
+  </div>
+  <header>
+    <h1 data-text="CODING DUEL">CODING DUEL</h1>
+    <div class="glitch-static"></div>
+     <div class="menu-icon" id="menu-toggle">☰</div>
+</header>
+
+  <main class="container">
+    <div id="side-menu" class="side-menu hidden">
+       <div class="close-icon" id="close-menu">✖</div>
+    <ul>
+      <li><a href="/profile">👤 Profile</a></li>
+      <li><a href="/history">📜 History</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+
+    </ul>
+  </div>
+<button class="main-button" data-start-url="{{ url_for('start_duel') }}">
+  START DUEL ⚔️
+</button>
+    <div class="grid-buttons">
+      <button class="grid-button">
+        <span class="emoji">👑</span><br>Leaderboard</button>
+      <button class="grid-button">
+        <span class="emoji">▶️</span><br>
+          Tutorials
+      </button>
+    </div>
+    <button class="learn-button">Learn with Note 📓</button>
+
+   
+  </main>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>  
+</body>
+</html>

@@ -1,0 +1,40 @@
+//Q1
+n = int(input().strip())
+
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+//Q2
+n = int(input())
+
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+//Q3
+a, b = map(int, input().split())
+
+if a > b:
+    print(a)
+else:
+    print(b)
+
+
+//Q4
+s = input().lower()
+vowels = "aeiou"
+
+count = 0
+for ch in s:
+    if ch in vowels:
+        count += 1
+
+print(count)
+
+//Q5
+print("Hello World")

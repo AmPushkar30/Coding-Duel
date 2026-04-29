@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+
+</head>
+<body>
+    <div id="page-loader">
+  <div class="loader-core">
+    <span>C</span><span>O</span><span>D</span><span>I</span><span>N</span><span>G</span>
+    <span>D</span><span>U</span><span>E</span><span>L</span>
+  </div>
+  </div>
+  <div class="neon-border">
+    <div class="login-container">
+      <h1>Login</h1>
+      <form action="/login" method="POST">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+        <div class="forgot-link">
+  <a href="{{ url_for('forgot_password') }}">Forgot password?</a>
+  
+</div>
+
+<p class="register-link">
+  Don't have an account? <a href="/register">Register here</a>
+</p>
+<a href="/admin/login" class="admin-btn">
+  🔐 Admin Login
+</a>
+
+
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div>
+  {% for category, message in messages %}
+              <p style="color: {% if category == 'error' %}red{% else %}lightgreen{% endif %};">
+                {{ message }}
+              </p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+    </div>
+  </div>
+</body>
+</html>
